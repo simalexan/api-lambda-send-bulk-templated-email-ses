@@ -19,7 +19,7 @@ exports.handler = (event) => {
   }
 
   const invalidEmailGroups = emailData.emailGroups.filter(emailGroup => {
-    return !emailGroup.toEmails;
+    return !emailGroup.toEmails || !emailGroup.templateData;
   });
 
   if (invalidEmailGroups.length > 0) {
